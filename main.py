@@ -46,7 +46,7 @@ class Auto:
         Auto.cantidaCreados += 1
 
     def cantidadAsientos(self) -> int:
-        return len(self.asientos)
+        return len([asiento for asiento in self.asientos if isinstance(asiento, Asiento)])
 
     def verificarIntegridad(self) -> bool:
         message = "Auto original"
