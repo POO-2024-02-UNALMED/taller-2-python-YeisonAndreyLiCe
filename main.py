@@ -39,14 +39,14 @@ class Auto:
         ) -> None:
         self.modelo = modelo
         self.precio = precio
-        self.asientos = asientos
+        self.asientos = [asiento for asiento in asientos if isinstance(asiento, Asiento)]
         self.marca = marca
         self.motor = motor
         self.registro = registro
         Auto.cantidaCreados += 1
 
     def cantidadAsientos(self) -> int:
-        return len([asiento for asiento in self.asientos if isinstance(asiento, Asiento)])
+        return len(self.asientos)
 
     def verificarIntegridad(self) -> bool:
         message = "Auto original"
