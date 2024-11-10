@@ -57,4 +57,4 @@ class Auto:
             if asiento.registro != self.registro:
                 message = "Las piezas no son originales"
 
-        print(message)
+        return message
